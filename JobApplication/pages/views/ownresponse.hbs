@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="https://th.bing.com/th/id/OIP.sCn6ZB3LL7VVvcMfQ9YqzwHaH0?rs=1&pid=ImgDetMain"
+        type="image/x-icon">
+        <script src="
+    https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js
+    "></script>
+  <link href="
+    https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css
+    " rel="stylesheet">
+    <title>Response</title>
+    <style>
+        .head {
+            width: 100%;
+            height: 100px;
+            color: white;
+            background-color: #1d443f;
+            font-size: 28px;
+            margin-top: -52px;
+        }
+
+        .all {
+            margin-top: 30px;
+        }
+
+        .gh {
+            width: 70%;
+            margin: auto;
+            border-radius: 20px;
+            border: 1px solid #1d443f;
+            margin-top: 40px;
+        }
+
+        .kl {
+            width: 90%;
+            margin: auto;
+            border-radius: 20px;
+            margin-top: 20px;
+            background-color: #1d443f;
+            color: #ffffff;
+            font-size: 21px;
+            font-weight: bold;
+            padding-left: 20px;
+        }
+
+        button {
+            width: 120px;
+            height: 50px;
+            background-color: #1d443f;
+            color: #ffffff;
+            margin-left: 20px;
+            cursor: pointer;
+            border-radius: 20px;
+
+        }
+
+        .bt {
+            display: flex;
+            margin: auto;
+        }
+
+        .logo-container {
+            position: relative;
+            width: 50%;
+            height: 45px;
+
+            &:before {
+                content: "";
+                position: absolute;
+                top: calc(100% - 2px);
+                width: 100%;
+                height: 4px;
+                background-color: #eeeeee;
+                transform-origin: center center;
+                transform: scaleX(0);
+
+                animation: line-animation 3s ease infinite alternate;
+            }
+
+            h1#page-logo {
+                font: bold 6rem 'Arial', sans-serif;
+
+                animation: clip-path-reveal-1 3s ease infinite alternate;
+            }
+        }
+
+        @keyframes line-animation {
+            0% {
+                transform: scaleX(0);
+            }
+
+            15% {
+                transform: scaleX(0);
+            }
+
+            20%,
+            25% {
+                transform: scaleX(1);
+                top: calc(100% - 2px);
+            }
+
+            50% {
+                transform: scaleX(1);
+                top: 0px;
+            }
+
+            70% {
+                transform: scaleX(0.2);
+                top: 0px;
+            }
+
+            80%,
+            100% {
+                transform: scaleX(0.2);
+                top: 0px;
+            }
+        }
+
+        @keyframes clip-path-reveal-1 {
+
+            0%,
+            25% {
+                clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
+            }
+
+            50% {
+                clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="head">
+        {{!-- <label for="">The response in your posts jobs</label> --}}
+        <div class="logo-container">
+            <h1 id="page-logo">RESPONSE</h1>
+        </div>
+    </div>
+    <div class="all">
+        <div class="gh">
+            <div class="kl">
+                <label for="">ClientName :</label><span></span><br><br>
+                <label for=""></label>ClinetEmail :<span></span><br><br>
+                <label for="">phoneNumber :</label><span></span><br><br><br><br>
+            </div><br>
+            <div class="bt">
+                <button class="btn1" yourname="" youremail="" phone="" image="" expectedsalary=""
+                    check="">Show-more</button>
+                <button class="btn2" email="">Send-message</button>
+                <button class="btn3" idremove="">Remove</button>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        const all = document.querySelector(".all")
+        fetch("http://localhost:3000/ownresponse", {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+        }).then((res) => res.json())
+            .then((data) => {
+                console.log(data)
+                function draw() {
+                    let s = data.map((item) => {
+                        return `
+                     <div class="gh">
+            <div class="kl">
+                <label for="">ClientName :</label><span>${item.yourname}</span><br><br>
+                <label for=""></label>ClinetEmail :<span>${item.youremail}</span><br><br>
+                  <label for="">phoneNumber :</label><span>${item.yournumber}</span><br><br><br><br>
+            </div><br>
+            <div class="bt">
+                <button class="btn1"  yourname=${item.yourname} youremail=${item.youremail} phone=${item.yournumber} image=${item.image.filename} expectedsalary=${item.expectedsalary} check=${item.check}>Show-more</button>
+                <button class="btn2" email=${item.youremail}>Send-message</button>
+                <button class="btn3" idremove=${item._id}>Remove</button>
+            </div>
+        </div>
+
+                    `
+                    })
+                    all.innerHTML = s
+                }
+                draw()
+
+                const btns = document.querySelectorAll('.btn1');
+                Array.from(btns).forEach((btn) => {
+
+                    btn.addEventListener("click", () => {
+                        console.log("kjkhs")
+                        const yourname = btn.getAttribute("yourname")
+                        const youremail = btn.getAttribute("youremail")
+                        const phone = btn.getAttribute("phone")
+                        const image = btn.getAttribute("image")
+                        const expectedsalary = btn.getAttribute("expectedsalary")
+                        const check = btn.getAttribute("check")
+                        setTimeout(() => {
+                            let url = new URL("http://localhost:3000/showmoredetails");
+                            url.searchParams.set('yourname', yourname);
+                            url.searchParams.set('youremail', youremail);
+                            url.searchParams.set('phone', phone);
+                            url.searchParams.set('image', image);
+                            url.searchParams.set('expectedsalary', expectedsalary);
+                            url.searchParams.set('check', check)
+                            window.location = url
+                        })
+
+                    })
+                })
+                /////////////////////////////////////////////////////////////////
+                const removes = document.querySelectorAll('.btn3');
+                Array.from(removes).forEach((btn) => {
+
+                    btn.addEventListener("click", () => {
+                        console.log("kjkhs")
+                        const _id = btn.getAttribute("idremove")
+                        fetch("http://localhost:3000/ownresponse", {
+                            method: 'DELETE',
+                            headers: {
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify({ _id: _id })
+                        }).then(response => response.json())
+                            .then((data) => {
+                                console.log(data)
+                                alert("Delete successflly")
+
+                            }).catch((e) => {
+                                console.log(e)
+                            })
+                        location.reload()
+
+                    })
+                })
+                /////////////////////////////////////////////////////////////
+                const send = document.querySelectorAll('.btn2');
+                Array.from(send).forEach((btn) => {
+
+                    btn.addEventListener("click", () => {
+                        console.log("kjkhs")
+                        const yourmail = btn.getAttribute("email")
+                        setTimeout(() => {
+                            let url = new URL("http://localhost:3000/sendmessage");
+                            url.searchParams.set('yourmail', yourmail);
+                            window.location = url
+
+                        })
+
+                    })
+                })
+
+
+            }).catch((e) => {
+                console.log(e)
+            })
+
+    </script>
+
+</body>
+
+</html>

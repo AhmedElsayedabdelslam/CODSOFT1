@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <input type="text" id="name">
+    <button type="button" class="bi">Send</button>
+    <script>
+         const bnt = document.querySelector(".bi")
+        bnt.addEventListener("click", () => {
+           
+            const name = document.querySelector("#name").value
+
+            fetch("http://localhost:3000/namegroup", {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({name:name })
+                }).then((data)=>{
+                    console.log(data)
+                }).catch((e) => {
+                        console.log(e)
+                    })
+
+        })
+    </script>
+    
+</body>
+</html>

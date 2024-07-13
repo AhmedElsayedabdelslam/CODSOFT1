@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>final</title>
+     <link rel="shortcut icon" href="https://th.bing.com/th/id/OIP.sCn6ZB3LL7VVvcMfQ9YqzwHaH0?rs=1&pid=ImgDetMain" type="image/x-icon">
+    <script src="
+https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js
+"></script>
+    <link href="
+https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css
+" rel="stylesheet">
+    <style>
+        .head {
+            width: 100%;
+            height: 80px;
+            color: white;
+            background-color: #1d443f;
+            font-size: 28px;
+        }
+
+        .all {
+            width: 80%;
+            height: 700px;
+            margin: auto;
+            border-radius: 20px;
+            border: 1px solid green;
+            margin-top: 30px;
+
+        }
+        .all {
+            color: #2c8f44;
+            font-size: 24px;
+            padding-left: 30px;
+        }
+        button {
+            color:white ;
+            width: 50%;
+            height: 70px;
+            margin: auto;
+            background-color: #1d443f;
+            border-radius: 20px;
+            margin-left: 20%;
+        }
+       
+    </style>
+</head>
+
+<body>
+    <div class="head">
+        <label for="" id="jobname"></label><br>
+        <label for="" id="companyname"></label>
+    </div>
+    <div class="all">
+        <label for="" class="lb1"></label><br><br>
+        <label for="" class="lb2"></label><br><br>
+        <label for="" class="lb3"></label><br><br>
+        <label for="" class="lb4"></label><br><br>
+        <label for="" class="lb5"></label><br><br>
+        <label for=""></label><a  class="lb6" href=""></a><br><br>
+        <label for="">CV-Attachment----</label><br><button class="buttonImg"></button>
+
+    </div>
+
+
+
+
+
+
+    <script>
+        const url = new URL(window.location.href);
+        const params = new URLSearchParams(url.search);
+        const check = params.get('check')
+        const buttonImg=document.querySelector(".buttonImg")
+        const username = params.get('username')
+        const companyName = params.get("companyName")
+        const imageCompany = params.get("imageCompany")
+        const jobName = params.get("jobName")
+        const JobType = params.get("JobType")
+        const companyname = document.querySelector("#companyname")
+        const jobname = document.querySelector("#jobname")
+        const clientName=document.querySelector(".lb1")
+        const clientEmail=document.querySelector(".lb2")
+        const phone=document.querySelector(".lb3")
+        const title=document.querySelector(".lb4")
+        const expected=document.querySelector(".lb5")
+        
+        companyname.textContent = companyName
+        jobname.textContent = jobName
+      buttonImg.addEventListener("click", () => {
+                            setTimeout(() => {
+                                window.location = buttonImg.textContent
+                            })
+                        })
+
+
+        fetch("http://localhost:3000/final", {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ check: check })
+        }).then((res) => res.json())
+            .then((data) => {
+                console.log(data.image.filename)
+                clientName.textContent="Client-Name is  :"+data.yourname
+                clientEmail.textContent="Client-Email is  :"+data.youremail
+                phone.textContent="Client-phoneNumber is  :"+data.yournumber
+                title.textContent="Job-Title is  :"+data.yourtitlejob
+                expected.textContent="The-expected-price is  :"+data.expectedsalary
+               
+                buttonImg.innerHTML=data.image.filename
+
+            }).catch((e) => {
+                console.log(e)
+            })
+
+
+
+
+    </script>
+</body>
+
+</html>

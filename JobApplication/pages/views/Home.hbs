@@ -1,0 +1,1594 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+   <link rel="shortcut icon" href="https://th.bing.com/th/id/OIP.sCn6ZB3LL7VVvcMfQ9YqzwHaH0?rs=1&pid=ImgDetMain" type="image/x-icon">
+  <script src="
+https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js
+"></script>
+  <link href="
+https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css
+" rel="stylesheet">
+  <script src="https://cdn.cdnhub.io/jquery/3.7.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="../css/all.css">
+ <meta name="description" content="serch job">
+
+  <style>
+    body {
+      font-family: "Open Sans", sans-serif;
+      color: #777;
+    }
+
+    a {
+      color: #43aea0;
+    }
+
+    a:hover {
+      color: #00d3b8;
+      text-decoration: none;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    .font-primary {
+      font-family: "Lato", sans-serif;
+    }
+
+    /*--------------------------------------------------------------
+# Back to top button
+--------------------------------------------------------------*/
+    .back-to-top {
+      position: fixed;
+      display: none;
+      width: 40px;
+      height: 40px;
+      border-radius: 3px;
+      right: 15px;
+      bottom: 15px;
+      background: #70b9b0;
+      color: #fff;
+      transition: display 0.5s ease-in-out;
+      z-index: 99999;
+    }
+
+    .back-to-top i {
+      font-size: 24px;
+      position: absolute;
+      top: 8px;
+      left: 8px;
+    }
+
+    .back-to-top:hover {
+      color: #fff;
+      background: #8bc6bf;
+      transition: background 0.2s ease-in-out;
+    }
+
+    /*--------------------------------------------------------------
+# Header
+--------------------------------------------------------------*/
+    #header {
+      height: 80px;
+      transition: all 0.5s;
+      z-index: 997;
+      transition: all 0.5s;
+      padding: 20px 0;
+      background: #2d6760;
+    }
+
+    #header.header-scrolled {
+      background: #1d443f;
+      height: 60px;
+      padding: 10px 0;
+    }
+
+    #header .logo h1 {
+      font-size: 30px;
+      margin: 0;
+      padding: 0;
+      line-height: 1;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    #header .logo h1 a,
+    #header .logo h1 a:hover {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    #header .logo img {
+      padding: 0;
+      margin: 0;
+      max-height: 40px;
+    }
+
+    @media (max-width: 768px) {
+      #header .logo h1 {
+        font-size: 28px;
+        padding: 8px 0;
+      }
+    }
+
+    #main {
+      margin-top: 80px;
+    }
+
+    /*--------------------------------------------------------------
+# Navigation Menu
+--------------------------------------------------------------*/
+    /* Desktop Navigation */
+    .nav-menu,
+    .nav-menu * {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .nav-menu>ul>li {
+      position: relative;
+      white-space: nowrap;
+      float: left;
+    }
+
+    .nav-menu a {
+      display: block;
+      position: relative;
+      color: #d2ece9;
+      padding: 10px 15px;
+      transition: 0.3s;
+      font-size: 14px;
+      font-family: "Open Sans", sans-serif;
+    }
+
+    .nav-menu a:hover,
+    .nav-menu .active>a,
+    .nav-menu li:hover>a {
+      color: #9cd5ce;
+      text-decoration: none;
+    }
+
+    .nav-menu .drop-down ul {
+      display: block;
+      position: absolute;
+      left: 0;
+      top: calc(100% - 30px);
+      z-index: 99;
+      opacity: 0;
+      visibility: hidden;
+      padding: 10px 0;
+      background: #fff;
+      box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
+      transition: ease all 0.3s;
+    }
+
+    .nav-menu .drop-down:hover>ul {
+      opacity: 1;
+      top: 100%;
+      visibility: visible;
+    }
+
+    .nav-menu .drop-down li {
+      min-width: 180px;
+      position: relative;
+    }
+
+    .nav-menu .drop-down ul a {
+      padding: 10px 20px;
+      font-size: 14px;
+      font-weight: 500;
+      text-transform: none;
+      color: #25564f;
+    }
+
+    .nav-menu .drop-down ul a:hover,
+    .nav-menu .drop-down ul .active>a,
+    .nav-menu .drop-down ul li:hover>a {
+      color: #70b9b0;
+    }
+
+    .nav-menu .drop-down>a:after {
+      content: "\ea99";
+      font-family: IcoFont;
+      padding-left: 5px;
+    }
+
+    .nav-menu .drop-down .drop-down ul {
+      top: 0;
+      left: calc(100% - 30px);
+    }
+
+    .nav-menu .drop-down .drop-down:hover>ul {
+      opacity: 1;
+      top: 0;
+      left: 100%;
+    }
+
+    .nav-menu .drop-down .drop-down>a {
+      padding-right: 35px;
+    }
+
+    .nav-menu .drop-down .drop-down>a:after {
+      content: "\eaa0";
+      font-family: IcoFont;
+      position: absolute;
+      right: 15px;
+    }
+
+    @media (max-width: 1366px) {
+      .nav-menu .drop-down .drop-down ul {
+        left: -90%;
+      }
+
+      .nav-menu .drop-down .drop-down:hover>ul {
+        left: -100%;
+      }
+
+      .nav-menu .drop-down .drop-down>a:after {
+        content: "\ea9d";
+      }
+    }
+
+    /* Mobile Navigation */
+    .mobile-nav {
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      z-index: 9999;
+      overflow-y: auto;
+      left: -260px;
+      width: 260px;
+      padding-top: 18px;
+      background: #01292a;
+      transition: 0.4s;
+    }
+
+    .mobile-nav * {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .mobile-nav a {
+      display: block;
+      position: relative;
+      color: #d2ece9;
+      padding: 10px 20px;
+      font-weight: 500;
+    }
+
+    .mobile-nav a:hover,
+    .mobile-nav .active>a,
+    .mobile-nav li:hover>a {
+      color: #9cd5ce;
+      text-decoration: none;
+    }
+
+    .mobile-nav .drop-down>a:after {
+      content: "\ea99";
+      font-family: IcoFont;
+      padding-left: 10px;
+      position: absolute;
+      right: 15px;
+    }
+
+    .mobile-nav .active.drop-down>a:after {
+      content: "\eaa0";
+    }
+
+    .mobile-nav .drop-down>a {
+      padding-right: 35px;
+    }
+
+    .mobile-nav .drop-down ul {
+      display: none;
+      overflow: hidden;
+    }
+
+    .mobile-nav .drop-down li {
+      padding-left: 20px;
+    }
+
+    .mobile-nav-toggle {
+      position: fixed;
+      right: 15px;
+      top: 15px;
+      z-index: 9998;
+      border: 0;
+      background: none;
+      font-size: 24px;
+      transition: all 0.4s;
+      outline: none !important;
+      line-height: 1;
+      cursor: pointer;
+      text-align: right;
+    }
+
+    .mobile-nav-toggle i {
+      color: #fff;
+    }
+
+    .mobile-nav-overly {
+      width: 100%;
+      height: 100%;
+      z-index: 9997;
+      top: 0;
+      left: 0;
+      position: fixed;
+      background: rgba(1, 41, 42, 0.9);
+      overflow: hidden;
+      display: none;
+    }
+
+    .mobile-nav-active {
+      overflow: hidden;
+    }
+
+    .mobile-nav-active .mobile-nav {
+      left: 0;
+    }
+
+    .mobile-nav-active .mobile-nav-toggle i {
+      color: #fff;
+    }
+
+    /*--------------------------------------------------------------
+# Hero Section
+--------------------------------------------------------------*/
+    #hero {
+      width: 100%;
+      height: 75vh;
+      background: url("hero-background.jpg") top center;
+      background-size: cover;
+      position: relative;
+      margin-bottom: -80px;
+    }
+
+    #hero:before {
+      content: "";
+      background: rgba(112, 185, 176, 0.85);
+      position: absolute;
+      bottom: 0;
+      top: 0;
+      left: 0;
+      right: 0;
+    }
+
+    #hero .hero-container {
+      position: absolute;
+      bottom: 0;
+      top: 0;
+      left: 0;
+      right: 0;
+      display: flex;
+      padding-top: 80px;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+    }
+
+    #hero h1 {
+      margin: 0 0 10px 0;
+      font-size: 48px;
+      font-weight: 300;
+      line-height: 56px;
+      color: #fff;
+    }
+
+    #hero h2 {
+      color: #eee;
+      margin-bottom: 50px;
+      font-size: 20px;
+      font-weight: 300;
+    }
+
+    #hero .btn-get-started {
+      font-family: "Lato", sans-serif;
+      font-weight: 400;
+      font-size: 16px;
+      letter-spacing: 1px;
+      display: inline-block;
+      padding: 8px 28px 10px 28px;
+      border-radius: 50px;
+      transition: 0.5s;
+      border: 1px solid #fff;
+      color: #fff;
+    }
+
+    #hero .btn-get-started:hover {
+      background: #fff;
+      color: #70b9b0;
+      border: 1px solid #70b9b0;
+    }
+
+    @media (min-width: 1024px) {
+      #hero {
+        background-attachment: fixed;
+      }
+    }
+
+    @media (max-width: 768px) {
+      #hero h1 {
+        font-size: 28px;
+        line-height: 36px;
+      }
+
+      #hero h2 {
+        font-size: 18px;
+        line-height: 24px;
+        margin-bottom: 30px;
+      }
+    }
+
+    /*--------------------------------------------------------------
+# Sections General
+--------------------------------------------------------------*/
+    section {
+      padding: 60px 0;
+    }
+
+    .section-bg {
+      background-color: #f2f9f8;
+    }
+
+    .section-title {
+      text-align: center;
+      padding-bottom: 30px;
+    }
+
+    .section-title h2 {
+      font-size: 32px;
+      font-weight: 300;
+      margin-bottom: 20px;
+      padding-bottom: 0;
+      color: #555;
+    }
+
+    .section-title p {
+      margin-bottom: 0;
+    }
+
+    /*--------------------------------------------------------------
+# About Us
+--------------------------------------------------------------*/
+    .about h3 {
+      font-weight: 400;
+      font-size: 26px;
+    }
+
+    .about ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .about ul li {
+      padding-bottom: 10px;
+    }
+
+    .about ul i {
+      font-size: 20px;
+      padding-right: 4px;
+      color: #70b9b0;
+    }
+
+    .about p:last-child {
+      margin-bottom: 0;
+    }
+
+    /*--------------------------------------------------------------
+# Services
+--------------------------------------------------------------*/
+    .services .icon-box {
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .services .icon {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 15px;
+    }
+
+    .services .icon i {
+      color: #70b9b0;
+      font-size: 42px;
+    }
+
+    .services .title {
+      font-weight: 700;
+      margin-bottom: 15px;
+      font-size: 18px;
+      text-transform: uppercase;
+    }
+
+    .services .title a {
+      color: #343a40;
+      transition: 0.3s;
+    }
+
+    .services .icon-box:hover .title a {
+      color: #70b9b0;
+    }
+
+    .services .description {
+      line-height: 24px;
+      font-size: 14px;
+    }
+
+    /*--------------------------------------------------------------
+# Call To Action
+--------------------------------------------------------------*/
+    .call-to-action {
+      background: linear-gradient(rgba(1, 41, 42, 0.5), rgba(7, 56, 57, 0.5)), url("call-to-action-bg.jpg") fixed center center;
+      background-size: cover;
+      padding: 60px 0;
+    }
+
+    .call-to-action h3 {
+      color: #fff;
+      font-size: 28px;
+      font-weight: 700;
+    }
+
+    .call-to-action p {
+      color: #fff;
+    }
+
+    .call-to-action .cta-btn {
+      font-family: "Lato", sans-serif;
+      font-weight: 400;
+      font-size: 16px;
+      letter-spacing: 1px;
+      display: inline-block;
+      padding: 8px 28px;
+      border-radius: 25px;
+      transition: 0.5s;
+      margin-top: 10px;
+      border: 2px solid #fff;
+      color: #fff;
+    }
+
+    .call-to-action .cta-btn:hover {
+      background: #70b9b0;
+      border: 2px solid #70b9b0;
+    }
+
+    /*--------------------------------------------------------------
+# Our Portfolio
+--------------------------------------------------------------*/
+    .portfolio {
+      padding: 60px 0;
+    }
+
+    .portfolio #portfolio-flters {
+      padding: 0;
+      margin: 0 0 35px 0;
+      list-style: none;
+      text-align: center;
+    }
+
+    .portfolio #portfolio-flters li {
+      cursor: pointer;
+      margin: 0 15px 15px 0;
+      display: inline-block;
+      padding: 10px 20px;
+      font-size: 12px;
+      line-height: 20px;
+      color: #777;
+      border-radius: 4px;
+      text-transform: uppercase;
+      background: white;
+      margin-bottom: 5px;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .portfolio #portfolio-flters li:hover,
+    .portfolio #portfolio-flters li.filter-active {
+      background: #70b9b0;
+      color: #fff;
+    }
+
+    .portfolio #portfolio-flters li:last-child {
+      margin-right: 0;
+    }
+
+    .portfolio .portfolio-item {
+      background: #073839;
+      overflow: hidden;
+      min-height: 200px;
+      position: relative;
+      border-radius: 4px;
+      margin: 0 0 30px 0;
+    }
+
+    .portfolio .portfolio-item img {
+      transition: all 0.3s ease-in-out;
+    }
+
+    .portfolio .portfolio-item .portfolio-info {
+      opacity: 0;
+      position: absolute;
+      transition: all .3s linear;
+      text-align: center;
+      top: 10%;
+      left: 0;
+      right: 0;
+    }
+
+    .portfolio .portfolio-item .portfolio-info h3 {
+      font-size: 22px;
+    }
+
+    .portfolio .portfolio-item .portfolio-info h3 a {
+      color: #fff;
+      font-weight: bold;
+    }
+
+    .portfolio .portfolio-item .portfolio-info a i {
+      color: #70b9b0;
+      font-size: 24px;
+    }
+
+    .portfolio .portfolio-item:hover img {
+      opacity: 0.4;
+      transform: scale(1.1);
+    }
+
+    .portfolio .portfolio-item:hover .portfolio-info {
+      opacity: 1;
+      top: calc(50% - 30px);
+    }
+
+    /*--------------------------------------------------------------
+# Frequently Asked Questions
+--------------------------------------------------------------*/
+    .faq {
+      padding: 60px 0;
+    }
+
+    .faq .faq-list {
+      padding: 0;
+      list-style: none;
+    }
+
+    .faq .faq-list li {
+      padding: 0 0 20px 25px;
+    }
+
+    .faq .faq-list a {
+      display: block;
+      position: relative;
+      font-family: #70b9b0;
+      font-size: 18px;
+      font-weight: 500;
+    }
+
+    .faq .faq-list i {
+      font-size: 18px;
+      position: absolute;
+      left: -25px;
+      top: 6px;
+    }
+
+    .faq .faq-list p {
+      margin-bottom: 20px;
+      font-size: 15px;
+    }
+
+    .faq .faq-list a.collapse {
+      color: #70b9b0;
+    }
+
+    .faq .faq-list a.collapsed {
+      color: #343a40;
+    }
+
+    .faq .faq-list a.collapsed:hover {
+      color: #70b9b0;
+    }
+
+    .faq .faq-list a.collapsed i::before {
+      content: "\eab2" !important;
+    }
+
+    /*--------------------------------------------------------------
+# Our Team
+--------------------------------------------------------------*/
+    .team .member {
+      text-align: center;
+      margin-bottom: 20px;
+      box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.1);
+      padding: 30px 20px;
+      background: #fff;
+    }
+
+    .team .member img {
+      max-width: 60%;
+      border-radius: 50%;
+      margin: 0 0 30px 0;
+    }
+
+    .team .member h4 {
+      font-weight: 700;
+      margin-bottom: 2px;
+      font-size: 18px;
+    }
+
+    .team .member span {
+      font-style: italic;
+      display: block;
+      font-size: 13px;
+    }
+
+    .team .member p {
+      padding-top: 10px;
+      font-size: 14px;
+      font-style: italic;
+      color: #aaaaaa;
+    }
+
+    .team .member .social {
+      margin-top: 15px;
+    }
+
+    .team .member .social a {
+      color: #92cac3;
+      transition: 0.3s;
+    }
+
+    .team .member .social a:hover {
+      color: #3c8b81;
+    }
+
+    .team .member .social i {
+      font-size: 18px;
+      margin: 0 2px;
+    }
+
+    /*--------------------------------------------------------------
+# Contact Us
+--------------------------------------------------------------*/
+    .contact .contact-about h3 {
+      font-size: 36px;
+      margin: 0 0 10px 0;
+      padding: 0;
+      line-height: 1;
+      font-weight: 500;
+      letter-spacing: 1px;
+      color: #70b9b0;
+    }
+
+    .contact .contact-about p {
+      font-size: 14px;
+      line-height: 24px;
+      font-family: "Lato", sans-serif;
+      color: #888;
+    }
+
+    .contact .social-links {
+      padding-bottom: 20px;
+    }
+
+    .contact .social-links a {
+      font-size: 18px;
+      display: inline-block;
+      background: #fff;
+      color: #70b9b0;
+      line-height: 1;
+      padding: 8px 0;
+      margin-right: 4px;
+      border-radius: 50%;
+      text-align: center;
+      width: 36px;
+      height: 36px;
+      transition: 0.3s;
+      border: 1px solid #70b9b0;
+    }
+
+    .contact .social-links a:hover {
+      background: #70b9b0;
+      color: #fff;
+    }
+
+    .contact .info {
+      color: #777;
+    }
+
+    .contact .info i {
+      font-size: 32px;
+      color: #70b9b0;
+      float: left;
+      line-height: 1;
+    }
+
+    .contact .info p {
+      padding: 0 0 10px 42px;
+      line-height: 28px;
+      font-size: 14px;
+    }
+
+    .contact .php-email-form .validate {
+      display: none;
+      color: red;
+      margin: 0 0 15px 0;
+      font-weight: 400;
+      font-size: 13px;
+    }
+
+    .contact .php-email-form .error-message {
+      display: none;
+      color: #fff;
+      background: #ed3c0d;
+      text-align: center;
+      padding: 15px;
+      font-weight: 600;
+    }
+
+    .contact .php-email-form .sent-message {
+      display: none;
+      color: #fff;
+      background: #18d26e;
+      text-align: center;
+      padding: 15px;
+      font-weight: 600;
+    }
+
+    .contact .php-email-form .loading {
+      display: none;
+      background: #fff;
+      text-align: center;
+      padding: 15px;
+    }
+
+    .contact .php-email-form .loading:before {
+      content: "";
+      display: inline-block;
+      border-radius: 50%;
+      width: 24px;
+      height: 24px;
+      margin: 0 10px -6px 0;
+      border: 3px solid #18d26e;
+      border-top-color: #eee;
+      -webkit-animation: animate-loading 1s linear infinite;
+      animation: animate-loading 1s linear infinite;
+    }
+
+    .contact .php-email-form input,
+    .contact .php-email-form textarea {
+      border-radius: 0;
+      box-shadow: none;
+      font-size: 14px;
+    }
+
+    .contact .php-email-form button[type="submit"] {
+      background: #70b9b0;
+      border: 0;
+      padding: 10px 24px;
+      color: #fff;
+      transition: 0.4s;
+    }
+
+    .contact .php-email-form button[type="submit"]:hover {
+      background: #92cac3;
+    }
+
+    @-webkit-keyframes animate-loading {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    @keyframes animate-loading {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    /*--------------------------------------------------------------
+# Map
+--------------------------------------------------------------*/
+    .map {
+      padding: 0;
+      margin-bottom: -10px;
+    }
+
+    .map iframe {
+      width: 100%;
+      height: 380px;
+    }
+
+    /*--------------------------------------------------------------
+# Footer
+--------------------------------------------------------------*/
+    #footer {
+      background: #073839;
+      padding: 30px 0;
+      color: #fff;
+      font-size: 14px;
+    }
+
+    #footer .copyright {
+      text-align: center;
+    }
+
+    #footer .credits {
+      padding-top: 10px;
+      text-align: center;
+      font-size: 13px;
+      color: #fff;
+    }
+
+    .nm {
+      display: flex;
+      justify-content: space-evenly;
+    }
+    #df{
+      color: white;
+      opacity: 0.9;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <header id="header" class="fixed-top">
+    <div class="container nm">
+
+      <div class="logo float-left">
+        <h1 class="text-light"><a href="index.html"><span>CodeSoft</span></a></h1>
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+      </div>
+
+      <nav class="nav-menu float-right d-none d-lg-block">
+        <ul>
+          <li class="active"><a href="#header">Home</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="http://localhost:3000/postjob">Post-Job</a></li>
+
+          <li class="drop-down"><a href="http://localhost:3000/alljobs">Finding-Job</a>
+
+          </li>
+          <li><a onclick="send()" id="df">Developer</a></li>
+          <li><a href="#contact">Contact Us</a></li>
+          <li><a href="http://localhost:3000/profile">MY-Profile</a></li>
+        </ul>
+      </nav><!-- .nav-menu -->
+
+    </div>
+  </header><!-- End #header -->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero">
+    <div class="hero-container">
+      <h1>Welcome to Code-Soft</h1>
+      <h2>We are team which help you to find job or post jobs</h2>
+      <a href="#about" class="btn-get-started scrollto">Get Started</a>
+    </div>
+  </section><!-- #hero -->
+
+  <main id="main">
+
+    <!-- ======= About Us Section ======= -->
+    <section id="about" class="about">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>About Us</h2>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-6 order-1 order-lg-2">
+            <img style="width: 100%;" src="portfolio-1.jpg" class="img-fluid" alt="">
+          </div>
+          <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1">
+            <h3>Voluptatem dignissimos provident quasi corporis voluptates sit assumenda.</h3>
+            <p class="font-italic">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+              dolore
+              magna aliqua.
+            </p>
+            <ul>
+              <li><i class="icofont-check-circled"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
+              <li><i class="icofont-check-circled"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
+              <li><i class="icofont-check-circled"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
+                aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla
+                pariatur.</li>
+            </ul>
+            <p>
+              Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+              voluptate
+              velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+              culpa qui officia deserunt mollit anim id est laborum
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End About Us Section -->
+
+    <!-- ======= Services Section ======= -->
+    <section id="services" class="services section-bg">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Services</h2>
+          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint
+            consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit
+            in iste officiis commodi quidem hic quas.</p>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-4 col-md-6 icon-box">
+            <div class="icon"><i class="icofont-computer"></i></div>
+            <h4 class="title"><a href="">Lorem Ipsum</a></h4>
+            <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint
+              occaecati cupiditate non provident</p>
+          </div>
+          <div class="col-lg-4 col-md-6 icon-box">
+            <div class="icon"><i class="icofont-chart-bar-graph"></i></div>
+            <h4 class="title"><a href="">Dolor Sitema</a></h4>
+            <p class="description">Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+              consequat tarad limino ata</p>
+          </div>
+          <div class="col-lg-4 col-md-6 icon-box">
+            <div class="icon"><i class="icofont-earth"></i></div>
+            <h4 class="title"><a href="">Sed ut perspiciatis</a></h4>
+            <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+              fugiat nulla pariatur</p>
+          </div>
+          <div class="col-lg-4 col-md-6 icon-box">
+            <div class="icon"><i class="icofont-image"></i></div>
+            <h4 class="title"><a href="">Magni Dolores</a></h4>
+            <p class="description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+              mollit anim id est laborum</p>
+          </div>
+          <div class="col-lg-4 col-md-6 icon-box">
+            <div class="icon"><i class="icofont-settings"></i></div>
+            <h4 class="title"><a href="">Nemo Enim</a></h4>
+            <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium
+              voluptatum deleniti atque</p>
+          </div>
+          <div class="col-lg-4 col-md-6 icon-box">
+            <div class="icon"><i class="icofont-tasks-alt"></i></div>
+            <h4 class="title"><a href="">Eiusmod Tempor</a></h4>
+            <p class="description">Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum
+              soluta nobis est eligendi</p>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Services Section -->
+
+    <!-- ======= Call To Action Section ======= -->
+    <section class="call-to-action">
+      <div class="container">
+
+        <div class="text-center">
+          <h3>Call To Action</h3>
+          <p> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+            laborum.</p>
+          <a class="cta-btn" href="#">Call To Action</a>
+        </div>
+
+      </div>
+    </section><!-- End Call To Action Section -->
+
+    <!-- ======= Our Portfolio Section ======= -->
+    <section id="portfolio" class="portfolio">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Our Portfolio</h2>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-12">
+            <ul id="portfolio-flters">
+              <li data-filter="*" class="filter-active">All</li>
+              <li data-filter=".filter-app">App</li>
+              <li data-filter=".filter-card">Card</li>
+              <li data-filter=".filter-web">Web</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="row portfolio-container">
+
+          <div class="col-lg-4 col-md-6 filter-app">
+            <div class="portfolio-item">
+              <img src="portfolio-1.jpg" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h3><a href="portfolio-1.jpg" data-gall="portfolioGallery" class="venobox" title="App 1">App 1</a></h3>
+                <a href="portfolio-1.jpg" data-gall="portfolioGallery" class="venobox" title="App 1"><i
+                    class="icofont-plus"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 filter-web">
+            <div class="portfolio-item">
+              <img src="portfolio-2.jpg" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h3><a href="portfolio-2.jpg" data-gall="portfolioGallery" class="venobox" title="Web 3">Web 3</a></h3>
+                <a href="portfolio-2.jpg" data-gall="portfolioGallery" class="venobox" title="Web 3"><i
+                    class="icofont-plus"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 filter-app">
+            <div class="portfolio-item">
+              <img src="portfolio-3.jpg" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h3><a href="portfolio-3.jpg" data-gall="portfolioGallery" class="venobox" title="App 2">App 2</a></h3>
+                <a href="portfolio-3.jpg" data-gall="portfolioGallery" class="venobox" title="App 2"><i
+                    class="icofont-plus"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 filter-card">
+            <div class="portfolio-item">
+              <img src="portfolio-4.jpg" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h3><a href="portfolio-4.jpg" data-gall="portfolioGallery" class="venobox" title="Card 2">Card 2</a>
+                </h3>
+                <a href="portfolio-4.jpg" data-gall="portfolioGallery" class="venobox" title="Card 2"><i
+                    class="icofont-plus"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 filter-web">
+            <div class="portfolio-item">
+              <img src="portfolio-5.jpg" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h3><a href="portfolio-5.jpg" data-gall="portfolioGallery" class="venobox" title="Web 2">Web 2</a></h3>
+                <a href="portfolio-5.jpg" data-gall="portfolioGallery" class="venobox" title="Web 2"><i
+                    class="icofont-plus"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 filter-app">
+            <div class="portfolio-item">
+              <img src="portfolio-6.jpg" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h3><a href="portfolio-6.jpg" data-gall="portfolioGallery" class="venobox" title="App 3">App 3</a></h3>
+                <a href="portfolio-6.jpg" data-gall="portfolioGallery" class="venobox" title="App 3"><i
+                    class="icofont-plus"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 filter-card">
+            <div class="portfolio-item">
+              <img src="portfolio-7.jpg" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h3><a href="portfolio-7.jpg" data-gall="portfolioGallery" class="venobox" title="Card 1">Card 1</a>
+                </h3>
+                <a href="portfolio-7.jpg" data-gall="portfolioGallery" class="venobox" title="Card 1"><i
+                    class="icofont-plus"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 filter-card">
+            <div class="portfolio-item">
+              <img src="portfolio-8.jpg" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h3><a href="portfolio-8.jpg" data-gall="portfolioGallery" class="venobox" title="Card 3">Card 3</a>
+                </h3>
+                <a href="portfolio-8.jpg" data-gall="portfolioGallery" class="venobox" title="Card 3"><i
+                    class="icofont-plus"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 filter-web">
+            <div class="portfolio-item">
+              <img src="portfolio-9.jpg" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h3><a href="portfolio-9.jpg" data-gall="portfolioGallery" class="venobox" title="Web 1">Web 1</a></h3>
+                <a href="portfolio-9.jpg" data-gall="portfolioGallery" class="venobox" title="Web 1"><i
+                    class="icofont-plus"></i></a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Our Portfolio Section -->
+
+    <!-- ======= Frequently Asked Questions Section ======= -->
+    <section id="faq" class="faq section-bg">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Frequently Asked Questions</h2>
+        </div>
+
+        <ul class="faq-list">
+
+          <li>
+            <a data-toggle="collapse" class="" href="#faq1">Non consectetur a erat nam at lectus urna duis? <i
+                class="icofont-simple-up"></i></a>
+            <div id="faq1" class="collapse show" data-parent=".faq-list">
+              <p>
+                Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus laoreet non curabitur
+                gravida. Venenatis lectus magna fringilla urna porttitor rhoncus dolor purus non.
+              </p>
+            </div>
+          </li>
+
+          <li>
+            <a data-toggle="collapse" href="#faq2" class="collapsed">Feugiat scelerisque varius morbi enim nunc faucibus
+              a pellentesque? <i class="icofont-simple-up"></i></a>
+            <div id="faq2" class="collapse" data-parent=".faq-list">
+              <p>
+                Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id
+                donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est pellentesque elit
+                ullamcorper dignissim. Mauris ultrices eros in cursus turpis massa tincidunt dui.
+              </p>
+            </div>
+          </li>
+
+          <li>
+            <a data-toggle="collapse" href="#faq3" class="collapsed">Dolor sit amet consectetur adipiscing elit
+              pellentesque habitant morbi? <i class="icofont-simple-up"></i></a>
+            <div id="faq3" class="collapse" data-parent=".faq-list">
+              <p>
+                Eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis orci. Faucibus pulvinar elementum
+                integer enim. Sem nulla pharetra diam sit amet nisl suscipit. Rutrum tellus pellentesque eu tincidunt.
+                Lectus urna duis convallis convallis tellus. Urna molestie at elementum eu facilisis sed odio morbi quis
+              </p>
+            </div>
+          </li>
+
+          <li>
+            <a data-toggle="collapse" href="#faq4" class="collapsed">Ac odio tempor orci dapibus. Aliquam eleifend mi in
+              nulla? <i class="icofont-simple-up"></i></a>
+            <div id="faq4" class="collapse" data-parent=".faq-list">
+              <p>
+                Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id
+                donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est pellentesque elit
+                ullamcorper dignissim. Mauris ultrices eros in cursus turpis massa tincidunt dui.
+              </p>
+            </div>
+          </li>
+
+          <li>
+            <a data-toggle="collapse" href="#faq5" class="collapsed">Tempus quam pellentesque nec nam aliquam sem et
+              tortor consequat? <i class="icofont-simple-up"></i></a>
+            <div id="faq5" class="collapse" data-parent=".faq-list">
+              <p>
+                Molestie a iaculis at erat pellentesque adipiscing commodo. Dignissim suspendisse in est ante in. Nunc
+                vel risus commodo viverra maecenas accumsan. Sit amet nisl suscipit adipiscing bibendum est. Purus
+                gravida quis blandit turpis cursus in
+              </p>
+            </div>
+          </li>
+
+          <li>
+            <a data-toggle="collapse" href="#faq6" class="collapsed">Tortor vitae purus faucibus ornare. Varius vel
+              pharetra vel turpis nunc eget lorem dolor? <i class="icofont-simple-up"></i></a>
+            <div id="faq6" class="collapse" data-parent=".faq-list">
+              <p>
+                Laoreet sit amet cursus sit amet dictum sit amet justo. Mauris vitae ultricies leo integer malesuada
+                nunc vel. Tincidunt eget nullam non nisi est sit amet. Turpis nunc eget lorem dolor sed. Ut venenatis
+                tellus in metus vulputate eu scelerisque. Pellentesque diam volutpat commodo sed egestas egestas
+                fringilla phasellus faucibus. Nibh tellus molestie nunc non blandit massa enim nec.
+              </p>
+            </div>
+          </li>
+
+        </ul>
+
+      </div>
+    </section><!-- End Frequently Asked Questions Section -->
+
+  
+    <!-- ======= Contact Us Section ======= -->
+    <section id="contact" class="contact section-bg">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Contact Us</h2>
+          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint
+            consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit
+            in iste officiis commodi quidem hic quas.</p>
+        </div>
+
+        <div class="row">
+
+          <div class="col-lg-4 col-md-6">
+            <div class="contact-about">
+              <h3>Code-Soft</h3>
+              <p>Cras fermentum odio eu feugiat. Justo eget magna fermentum iaculis eu non diam phasellus. Scelerisque
+                felis imperdiet proin fermentum leo. Amet volutpat consequat mauris nunc congue.</p>
+              <div class="social-links">
+                <a href="#" class="twitter"><i class="fab fa-twitter"></i></i></a>
+                <a href="#" class="facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="instagram"><i class="fab fa-linkedin-in"></i></i></a>
+                <a href="#" class="linkedin"><i class="fab fa-instagram-square"></i></a>
+              </div>
+            </div>
+          </div>
+
+         
+          <div class="col-lg-5 col-md-12">
+            <form method="post" role="form">
+              <div class="form-group">
+                <input type="text" name="name" class="form-control" id="name" placeholder="Your Name"
+                  data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                <div class="validate"></div>
+              </div><br>
+              <div class="form-group">
+                <input type="email" class="form-control" name="email" id="email" placeholder="Your Email"
+                  data-rule="email" data-msg="Please enter a valid email" />
+                <div class="validate"></div>
+              </div><br>
+              <div class="form-group">
+                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject"
+                  data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
+                <div class="validate"></div>
+              </div><br>
+              <div class="form-group">
+                <textarea class="form-control" id="message" name="message" rows="5" data-rule="required"
+                  data-msg="Please write something for us" placeholder="Message"></textarea>
+                <div class="validate"></div>
+              </div>
+
+          </div>
+          <div class="text-center"><button type="button" class="btn">Send Message</button></div>
+          </form>
+        </div>
+
+      </div>
+
+      </div>
+    </section><!-- End Contact Us Section -->
+
+    <!-- ======= Map Section ======= -->
+    <section class="map">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3024.2219901290355!2d-74.00369368400567!3d40.71312937933185!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a23e28c1191%3A0x49f75d3281df052a!2s150%20Park%20Row%2C%20New%20York%2C%20NY%2010007%2C%20USA!5e0!3m2!1sen!2sbg!4v1579767901424!5m2!1sen!2sbg"
+        frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+    </section><!-- End Map Section -->
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong><span>CODESOFT</span></strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/free-one-page-bootstrap-template-amoeba/ -->
+        Designed by <a href="#">CodeSoft-Team</a>
+      </div>
+    </div>
+  </footer><!-- End #footer -->
+
+  <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+
+  <script src="jquery/jquery.min.js"></script>
+  <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="jquery.easing/jquery.easing.min.js"></script>
+  <script src="php-email-form/validate.js"></script>
+  <script src="isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="venobox/venobox.min.js"></script>
+
+
+  <script>
+    !(function ($) {
+      "use strict";
+
+      // Toggle .header-scrolled class to #header when page is scrolled
+      $(window).scroll(function () {
+        if ($(this).scrollTop() > 100) {
+          $('#header').addClass('header-scrolled');
+        } else {
+          $('#header').removeClass('header-scrolled');
+        }
+      });
+
+      if ($(window).scrollTop() > 100) {
+        $('#header').addClass('header-scrolled');
+      }
+
+      // Smooth scroll for the navigation menu and links with .scrollto classes
+      $(document).on('click', '.nav-menu a, .mobile-nav a, .scrollto', function (e) {
+        if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+          e.preventDefault();
+          var target = $(this.hash);
+          if (target.length) {
+
+            var scrollto = target.offset().top;
+            var scrolled = 20;
+
+            if ($('#header').length) {
+              scrollto -= $('#header').outerHeight()
+
+              if (!$('#header').hasClass('header-scrolled')) {
+                scrollto += scrolled;
+              }
+            }
+
+            if ($(this).attr("href") == '#header') {
+              scrollto = 0;
+            }
+
+            $('html, body').animate({
+              scrollTop: scrollto
+            }, 1500, 'easeInOutExpo');
+
+            if ($(this).parents('.nav-menu, .mobile-nav').length) {
+              $('.nav-menu .active, .mobile-nav .active').removeClass('active');
+              $(this).closest('li').addClass('active');
+            }
+
+            if ($('body').hasClass('mobile-nav-active')) {
+              $('body').removeClass('mobile-nav-active');
+              $('.mobile-nav-toggle i').toggleClass('icofont-navigation-menu icofont-close');
+              $('.mobile-nav-overly').fadeOut();
+            }
+            return false;
+          }
+        }
+      });
+
+      // Mobile Navigation
+      if ($('.nav-menu').length) {
+        var $mobile_nav = $('.nav-menu').clone().prop({
+          class: 'mobile-nav d-lg-none'
+        });
+        $('body').append($mobile_nav);
+        $('body').prepend('<button type="button" class="mobile-nav-toggle d-lg-none"><i class="icofont-navigation-menu"></i></button>');
+        $('body').append('<div class="mobile-nav-overly"></div>');
+
+        $(document).on('click', '.mobile-nav-toggle', function (e) {
+          $('body').toggleClass('mobile-nav-active');
+          $('.mobile-nav-toggle i').toggleClass('icofont-navigation-menu icofont-close');
+          $('.mobile-nav-overly').toggle();
+        });
+
+        $(document).on('click', '.mobile-nav .drop-down > a', function (e) {
+          e.preventDefault();
+          $(this).next().slideToggle(300);
+          $(this).parent().toggleClass('active');
+        });
+
+        $(document).click(function (e) {
+          var container = $(".mobile-nav, .mobile-nav-toggle");
+          if (!container.is(e.target) && container.has(e.target).length === 0) {
+            if ($('body').hasClass('mobile-nav-active')) {
+              $('body').removeClass('mobile-nav-active');
+              $('.mobile-nav-toggle i').toggleClass('icofont-navigation-menu icofont-close');
+              $('.mobile-nav-overly').fadeOut();
+            }
+          }
+        });
+      } else if ($(".mobile-nav, .mobile-nav-toggle").length) {
+        $(".mobile-nav, .mobile-nav-toggle").hide();
+      }
+
+      // Back to top button
+      $(window).scroll(function () {
+        if ($(this).scrollTop() > 100) {
+          $('.back-to-top').fadeIn('slow');
+        } else {
+          $('.back-to-top').fadeOut('slow');
+        }
+      });
+
+      $('.back-to-top').click(function () {
+        $('html, body').animate({
+          scrollTop: 0
+        }, 1500, 'easeInOutExpo');
+        return false;
+      });
+
+      // Porfolio isotope and filter
+      $(window).on('load', function () {
+        var portfolioIsotope = $('.portfolio-container').isotope({
+          layoutMode: 'fitRows'
+        });
+
+        $('#portfolio-flters li').on('click', function () {
+          $("#portfolio-flters li").removeClass('filter-active');
+          $(this).addClass('filter-active');
+
+          portfolioIsotope.isotope({
+            filter: $(this).data('filter')
+          });
+        });
+
+        // Initiate venobox (lightbox feature used in portofilo)
+        $(document).ready(function () {
+          $('.venobox').venobox();
+        });
+      });
+
+    })(jQuery);
+    // for contact 
+
+    const btn = document.querySelector(".btn")
+    btn.addEventListener("click", () => {
+      const YourName = document.querySelector("#name").value
+      const yourMail = document.querySelector("#email").value
+      const subject = document.querySelector("#subject").value
+      const message = document.querySelector("#message").value
+
+      fetch("http://localhost:3000/Home", {
+        method: "POST",
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ YourName: YourName, yourMail: yourMail, subject: subject, message: message })
+      })
+        .then(response => response.json())
+        .then((task) => {
+          console.log(task)
+          alert("You have sent your problem thanks")
+        })
+
+    })
+    //////////////////////////////////////////////////////
+    function send(){
+      fetch("http://localhost:3000/problems", {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+    })
+      .then(response => response.json())
+      .then((data) => {
+        if (data == "Welcome Admine") {
+          alert("Welcome Admine")
+          setTimeout(() => {
+            window.location = "http://localhost:3000/problems"
+
+          }, 100)
+        } else {
+          alert("This page is for admine only")
+        }
+      })
+    }
+
+
+
+
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,239 @@
+<html>
+
+<head>
+    <title>forgetpass</title>
+    <script src="
+    https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js
+    "></script>
+  <link href="
+    https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css
+    " rel="stylesheet">
+     <link rel="shortcut icon" href="https://th.bing.com/th/id/OIP.sCn6ZB3LL7VVvcMfQ9YqzwHaH0?rs=1&pid=ImgDetMain" type="image/x-icon">
+    <style>
+        #di2,
+        #di3,
+        #di5,
+        #di6 {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Password Reset 8 - Bootstrap Brain Component -->
+    <section class="bg-light p-3 p-md-4 p-xl-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 col-xxl-11">
+                    <div class="card border-light-subtle shadow-sm">
+                        <div class="row g-0">
+                            <div class="col-12 col-md-6">
+                                <img style="border-radius: 20px;"
+                                    class="img-fluid rounded-start w-100 h-100 object-fit-cover"
+                                    src="https://img.freepik.com/premium-photo/tropical-plant-with-green-leaves_900101-19893.jpg"
+                                    alt="Welcome back you've been missed!">
+                            </div>
+                            <div class="col-12 col-md-6 d-flex align-items-center justify-content-center">
+                                <div class="col-12 col-lg-11 col-xl-10">
+                                    <div class="card-body p-3 p-md-4 p-xl-5">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <div class="mb-5">
+                                                    <div class="text-center mb-4">
+                                                        <a href="#!">
+                                                            <img src="https://th.bing.com/th/id/OIP.G9X8ZGdNjqis2X7ftn_7hQHaHi?rs=1&pid=ImgDetMain"
+                                                                alt="BootstrapBrain Logo" width="175" height="57">
+                                                        </a>
+                                                    </div>
+                                                    <h2 class="h4 text-center" style="color: rgb(62, 124, 80);">Password Reset</h2>
+                                                    <h3 class="fs-6 fw-normal text-secondary text-center m-0">Provide
+                                                        the email address associated with your account to recover your
+                                                        password.</h3>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <form action="#!">
+                                            <div class="row gy-3 overflow-hidden">
+                                                <div class="col-12" id="di1">
+                                                    <div class="form-floating mb-3">
+                                                        <input type="email" class="form-control" name="email" id="email"
+                                                            placeholder="name@example.com" required>
+                                                        <label for="email" class="form-label">Email</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12" id="di2">
+                                                    <div class="form-floating mb-3">
+                                                        <input type="email" class="form-control" name="email"
+                                                            id="Vemail" placeholder="name@example.com" required>
+                                                        <label for="email" class="form-label">Sending Code</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12" id="di3">
+                                                    <div class="form-floating mb-3">
+                                                        <input type="email" class="form-control" name="email"
+                                                            id="Newpass" placeholder="name@example.com" required>
+                                                        <label for="email" class="form-label">Newpassword</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12" id="di4">
+                                                    <div class="d-grid">
+                                                        <button class="btn btn-success btn-lg" type="button"
+                                                            id="send1">Reset Password</button>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12" id="di5">
+                                                    <div class="d-grid">
+                                                        <button class="btn btn-success btn-lg" type="button"
+                                                            id="send2">Verify</button>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12" id="di6">
+                                                    <div class="d-grid">
+                                                        <button class="btn btn-success btn-lg" type="button"
+                                                            id="send3">Change Password</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <div
+                                                    class="d-flex gap-2 gap-md-4 flex-column flex-md-row justify-content-md-center mt-5">
+                                                    <a href="login"
+                                                        class="link-secondary text-decoration-none">Login</a>
+                                                    <a href="/" class="link-secondary text-decoration-none">Register</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const ResestPss = document.querySelector("#send1")
+        const Verify = document.querySelector("#send2")
+        const changepass = document.querySelector("#send3")
+
+
+        function submitform(e) {
+            const email = document.querySelector("#email").value
+            const vemaail = document.querySelector("#Vemail").value
+            const password = document.querySelector("#Newpass").value
+            const di1 = document.querySelector("#di1")
+            const di2 = document.querySelector("#di2")
+            const di3 = document.querySelector("#di3")
+            const di4 = document.querySelector("#di4")
+            const di5 = document.querySelector("#di5")
+            const di6 = document.querySelector("#di6")
+
+
+
+
+            e.preventDefault()
+            if (email === "") {
+                alert("please complete the form")
+            }
+            else {
+                fetch("http://localhost:3000/userDetails")
+                    .then((users) => users.json())
+                    .then((users) => {
+                        const email = document.querySelector("#email").value
+                        function getData() {
+                            return users.filter((e) => {
+                                return e.email == email; // fetch array object if it matches the value
+                            })
+                        }
+                        var result = getData();
+                        {{!-- console.log(result) --}}
+                        if (result.length == 0) {
+                            alert("there is no person with this email");
+                        } else {
+                            fetch("http://localhost:3000/forgetpass", {
+                                method: 'POST',
+                                headers: {
+                                    'Content-Type': 'application/json'
+                                },
+                                body: JSON.stringify({ email: email })
+                            })
+                                .then(response => response.json())
+                                .then((data) => {
+                                    console.log(data)
+                                    di2.style.display = "block"
+                                    di5.style.display = "block"
+                                    di1.style.display = "none"
+                                    di4.style.display = "none"
+
+                                    Verify.addEventListener("click", () => {
+                                        const vcode = document.querySelector("#Vemail").value
+                                        if (vcode === data) {
+                                            alert("You have enter the correct code ,please enter the new pass")
+                                            di3.style.display = "block"
+                                            di6.style.display = "block"
+                                            di1.style.display = "none"
+                                            di2.style.display = "none"
+                                            di5.style.display = "none"
+                                            di4.style.display = "none"
+
+                                            changepass.addEventListener("click", () => {
+                                                const password =document.querySelector("#Newpass").value
+                                                const id = result.map(a => a._id).toString()
+                                                const username = result.map(a => a.username).toString()
+                                                const email = result.map(a => a.email).toString()
+                                                e.preventDefault()
+                                                
+                                                console.log(id, username, password)
+                                                
+                                                fetch("http://localhost:3000/forgetpass", {
+                                                    method: 'PATCH',
+                                                    headers: {
+                                                        'Content-Type': 'application/json' 
+                                                    },
+                                                    body: JSON.stringify({ id:id, username:username,email:email, password:password })
+                                                }).then(response => response.json())
+                                                    .then((data) => {
+                                                        console.log(data)
+
+                                                    }).catch((e) => {
+                                                        console.log(e)
+                                                    })
+                                                    alert("You Change your password successfully")
+                                                    {{!-- window.location="http://localhost:3000/login" --}}
+                                            })
+
+
+
+                                        }
+                                    })
+
+
+                                })
+
+                        }
+
+                        }).catch((e) => {
+                            console.log(e)
+
+                        })
+
+
+            }
+        }
+
+
+
+
+
+
+
+        ResestPss.addEventListener('click', submitform)
+
+    </script>
+</body>
+
+</html>

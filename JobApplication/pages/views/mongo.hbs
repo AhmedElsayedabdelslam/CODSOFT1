@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mongo</title>
+</head>
+
+<body>
+    
+    <input type="text" id="q1">
+    <input type="text" id="q2">
+    <input type="text" id="q3">
+    <input type="text" id="q4">
+    <button type="button" class="bi">Send</button>
+
+    <script>
+
+        const bnt = document.querySelector(".bi")
+        bnt.addEventListener("click", () => {
+            const question1 = document.querySelector("#q1").value
+            const question2 = document.querySelector("#q2").value
+            const question3 = document.querySelector("#q3").value
+            const question4 = document.querySelector("#q4").value
+            var id = localStorage.getItem("id")
+            console.log(id)
+           
+
+            fetch("http://localhost:3000/mongo", {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({question1:question1,question2:question2,question3:question3,question4:question4 ,id:id})
+                }).then((data)=>{
+                    console.log(data)
+                }).catch((e) => {
+                        console.log(e)
+                    })
+
+        })
+
+
+
+
+    </script>
+
+</body>
+
+</html>
